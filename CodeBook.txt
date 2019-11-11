@@ -1,7 +1,7 @@
 run_analyis.R is a r program that 
 1) renames column variables to eliminate -s and ()s in column names
 2) gathers columns that contain std dev and mean measurements
-3) finds the mean of each measurement for each subject and places that information into a tidy data file.
+3) finds the mean of each measurement for each subject and places that information into a tidy data file named TidyMeans.csv.
 
 The dataset is as follows:
 ==================================================================
@@ -10,7 +10,7 @@ Version 1.0
 ==================================================================
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Universit‡ degli Studi di Genova.
+DITEN - Universit√† degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
