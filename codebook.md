@@ -615,217 +615,96 @@ names(merge)
 mergeMeanStd<-select(merge, matches("mean|std"), one_of(subject, activity)) 
 ncol(mergeMeanStd)
 ## [1] 88
-summary(mergeMeanStd)
-##  tBodyAcc_mean_X   tBodyAcc_mean_Y    tBodyAcc_mean_Z    tBodyAcc_std_X   
-##  Min.   :-1.0000   Min.   :-1.00000   Min.   :-1.00000   Min.   :-1.0000  
-##  1st Qu.: 0.2626   1st Qu.:-0.02490   1st Qu.:-0.12102   1st Qu.:-0.9924  
-##  Median : 0.2772   Median :-0.01716   Median :-0.10860   Median :-0.9430  
-##  Mean   : 0.2743   Mean   :-0.01774   Mean   :-0.10892   Mean   :-0.6078  
-##  3rd Qu.: 0.2884   3rd Qu.:-0.01062   3rd Qu.:-0.09759   3rd Qu.:-0.2503  
-##  Max.   : 1.0000   Max.   : 1.00000   Max.   : 1.00000   Max.   : 1.0000  
-##  tBodyAcc_std_Y     tBodyAcc_std_Z    tGravityAcc_mean_X
-##  Min.   :-1.00000   Min.   :-1.0000   Min.   :-1.0000   
-##  1st Qu.:-0.97699   1st Qu.:-0.9791   1st Qu.: 0.8117   
-##  Median :-0.83503   Median :-0.8508   Median : 0.9218   
-##  Mean   :-0.51019   Mean   :-0.6131   Mean   : 0.6692   
-##  3rd Qu.:-0.05734   3rd Qu.:-0.2787   3rd Qu.: 0.9547   
-##  Max.   : 1.00000   Max.   : 1.0000   Max.   : 1.0000   
-##  tGravityAcc_mean_Y  tGravityAcc_mean_Z tGravityAcc_std_X
-##  Min.   :-1.000000   Min.   :-1.00000   Min.   :-1.0000  
-##  1st Qu.:-0.242943   1st Qu.:-0.11671   1st Qu.:-0.9949  
-##  Median :-0.143551   Median : 0.03680   Median :-0.9819  
-##  Mean   : 0.004039   Mean   : 0.09215   Mean   :-0.9652  
-##  3rd Qu.: 0.118905   3rd Qu.: 0.21621   3rd Qu.:-0.9615  
-##  Max.   : 1.000000   Max.   : 1.00000   Max.   : 1.0000  
-##  tGravityAcc_std_Y tGravityAcc_std_Z tBodyAccJerk_mean_X
-##  Min.   :-1.0000   Min.   :-1.0000   Min.   :-1.00000   
-##  1st Qu.:-0.9913   1st Qu.:-0.9866   1st Qu.: 0.06298   
-##  Median :-0.9759   Median :-0.9665   Median : 0.07597   
-##  Mean   :-0.9544   Mean   :-0.9389   Mean   : 0.07894   
-##  3rd Qu.:-0.9464   3rd Qu.:-0.9296   3rd Qu.: 0.09131   
-##  Max.   : 1.0000   Max.   : 1.0000   Max.   : 1.00000   
-##  tBodyAccJerk_mean_Y tBodyAccJerk_mean_Z tBodyAccJerk_std_X
-##  Min.   :-1.000000   Min.   :-1.000000   Min.   :-1.0000   
-##  1st Qu.:-0.018555   1st Qu.:-0.031552   1st Qu.:-0.9913   
-##  Median : 0.010753   Median :-0.001159   Median :-0.9513   
-##  Mean   : 0.007948   Mean   :-0.004675   Mean   :-0.6398   
-##  3rd Qu.: 0.033538   3rd Qu.: 0.024578   3rd Qu.:-0.2912   
-##  Max.   : 1.000000   Max.   : 1.000000   Max.   : 1.0000   
-##  tBodyAccJerk_std_Y tBodyAccJerk_std_Z tBodyGyro_mean_X  
-##  Min.   :-1.0000    Min.   :-1.0000    Min.   :-1.00000  
-##  1st Qu.:-0.9850    1st Qu.:-0.9892    1st Qu.:-0.04579  
-##  Median :-0.9250    Median :-0.9543    Median :-0.02776  
-##  Mean   :-0.6080    Mean   :-0.7628    Mean   :-0.03098  
-##  3rd Qu.:-0.2218    3rd Qu.:-0.5485    3rd Qu.:-0.01058  
-##  Max.   : 1.0000    Max.   : 1.0000    Max.   : 1.00000  
-##  tBodyGyro_mean_Y   tBodyGyro_mean_Z   tBodyGyro_std_X   tBodyGyro_std_Y  
-##  Min.   :-1.00000   Min.   :-1.00000   Min.   :-1.0000   Min.   :-1.0000  
-##  1st Qu.:-0.10399   1st Qu.: 0.06485   1st Qu.:-0.9872   1st Qu.:-0.9819  
-##  Median :-0.07477   Median : 0.08626   Median :-0.9016   Median :-0.9106  
-##  Mean   :-0.07472   Mean   : 0.08836   Mean   :-0.7212   Mean   :-0.6827  
-##  3rd Qu.:-0.05110   3rd Qu.: 0.11044   3rd Qu.:-0.4822   3rd Qu.:-0.4461  
-##  Max.   : 1.00000   Max.   : 1.00000   Max.   : 1.0000   Max.   : 1.0000  
-##  tBodyGyro_std_Z   tBodyGyroJerk_mean_X tBodyGyroJerk_mean_Y
-##  Min.   :-1.0000   Min.   :-1.00000     Min.   :-1.00000    
-##  1st Qu.:-0.9850   1st Qu.:-0.11723     1st Qu.:-0.05868    
-##  Median :-0.8819   Median :-0.09824     Median :-0.04056    
-##  Mean   :-0.6537   Mean   :-0.09671     Mean   :-0.04232    
-##  3rd Qu.:-0.3379   3rd Qu.:-0.07930     3rd Qu.:-0.02521    
-##  Max.   : 1.0000   Max.   : 1.00000     Max.   : 1.00000    
-##  tBodyGyroJerk_mean_Z tBodyGyroJerk_std_X tBodyGyroJerk_std_Y
-##  Min.   :-1.00000     Min.   :-1.0000     Min.   :-1.0000    
-##  1st Qu.:-0.07936     1st Qu.:-0.9907     1st Qu.:-0.9922    
-##  Median :-0.05455     Median :-0.9348     Median :-0.9548    
-##  Mean   :-0.05483     Mean   :-0.7313     Mean   :-0.7861    
-##  3rd Qu.:-0.03168     3rd Qu.:-0.4865     3rd Qu.:-0.6268    
-##  Max.   : 1.00000     Max.   : 1.0000     Max.   : 1.0000    
-##  tBodyGyroJerk_std_Z tBodyAccMag_mean  tBodyAccMag_std  
-##  Min.   :-1.0000     Min.   :-1.0000   Min.   :-1.0000  
-##  1st Qu.:-0.9926     1st Qu.:-0.9819   1st Qu.:-0.9822  
-##  Median :-0.9503     Median :-0.8746   Median :-0.8437  
-##  Mean   :-0.7399     Mean   :-0.5482   Mean   :-0.5912  
-##  3rd Qu.:-0.5097     3rd Qu.:-0.1201   3rd Qu.:-0.2423  
-##  Max.   : 1.0000     Max.   : 1.0000   Max.   : 1.0000  
-##  tGravityAccMag_mean tGravityAccMag_std tBodyAccJerkMag_mean
-##  Min.   :-1.0000     Min.   :-1.0000    Min.   :-1.0000     
-##  1st Qu.:-0.9819     1st Qu.:-0.9822    1st Qu.:-0.9896     
-##  Median :-0.8746     Median :-0.8437    Median :-0.9481     
-##  Mean   :-0.5482     Mean   :-0.5912    Mean   :-0.6494     
-##  3rd Qu.:-0.1201     3rd Qu.:-0.2423    3rd Qu.:-0.2956     
-##  Max.   : 1.0000     Max.   : 1.0000    Max.   : 1.0000     
-##  tBodyAccJerkMag_std tBodyGyroMag_mean tBodyGyroMag_std 
-##  Min.   :-1.0000     Min.   :-1.0000   Min.   :-1.0000  
-##  1st Qu.:-0.9907     1st Qu.:-0.9781   1st Qu.:-0.9775  
-##  Median :-0.9288     Median :-0.8223   Median :-0.8259  
-##  Mean   :-0.6278     Mean   :-0.6052   Mean   :-0.6625  
-##  3rd Qu.:-0.2733     3rd Qu.:-0.2454   3rd Qu.:-0.3940  
-##  Max.   : 1.0000     Max.   : 1.0000   Max.   : 1.0000  
-##  tBodyGyroJerkMag_mean tBodyGyroJerkMag_std fBodyAcc_mean_X  
-##  Min.   :-1.0000       Min.   :-1.0000      Min.   :-1.0000  
-##  1st Qu.:-0.9923       1st Qu.:-0.9922      1st Qu.:-0.9913  
-##  Median :-0.9559       Median :-0.9403      Median :-0.9456  
-##  Mean   :-0.7621       Mean   :-0.7780      Mean   :-0.6228  
-##  3rd Qu.:-0.5499       3rd Qu.:-0.6093      3rd Qu.:-0.2646  
-##  Max.   : 1.0000       Max.   : 1.0000      Max.   : 1.0000  
-##  fBodyAcc_mean_Y   fBodyAcc_mean_Z   fBodyAcc_std_X    fBodyAcc_std_Y    
-##  Min.   :-1.0000   Min.   :-1.0000   Min.   :-1.0000   Min.   :-1.00000  
-##  1st Qu.:-0.9792   1st Qu.:-0.9832   1st Qu.:-0.9929   1st Qu.:-0.97689  
-##  Median :-0.8643   Median :-0.8954   Median :-0.9416   Median :-0.83261  
-##  Mean   :-0.5375   Mean   :-0.6650   Mean   :-0.6034   Mean   :-0.52842  
-##  3rd Qu.:-0.1032   3rd Qu.:-0.3662   3rd Qu.:-0.2493   3rd Qu.:-0.09216  
-##  Max.   : 1.0000   Max.   : 1.0000   Max.   : 1.0000   Max.   : 1.00000  
-##  fBodyAcc_std_Z    fBodyAcc_meanFreq_X fBodyAcc_meanFreq_Y
-##  Min.   :-1.0000   Min.   :-1.00000    Min.   :-1.000000  
-##  1st Qu.:-0.9780   1st Qu.:-0.41878    1st Qu.:-0.144772  
-##  Median :-0.8398   Median :-0.23825    Median : 0.004666  
-##  Mean   :-0.6179   Mean   :-0.22147    Mean   : 0.015401  
-##  3rd Qu.:-0.3023   3rd Qu.:-0.02043    3rd Qu.: 0.176603  
-##  Max.   : 1.0000   Max.   : 1.00000    Max.   : 1.000000  
-##  fBodyAcc_meanFreq_Z fBodyAccJerk_mean_X fBodyAccJerk_mean_Y
-##  Min.   :-1.00000    Min.   :-1.0000     Min.   :-1.0000    
-##  1st Qu.:-0.13845    1st Qu.:-0.9912     1st Qu.:-0.9848    
-##  Median : 0.06084    Median :-0.9516     Median :-0.9257    
-##  Mean   : 0.04731    Mean   :-0.6567     Mean   :-0.6290    
-##  3rd Qu.: 0.24922    3rd Qu.:-0.3270     3rd Qu.:-0.2638    
-##  Max.   : 1.00000    Max.   : 1.0000     Max.   : 1.0000    
-##  fBodyAccJerk_mean_Z fBodyAccJerk_std_X fBodyAccJerk_std_Y
-##  Min.   :-1.0000     Min.   :-1.0000    Min.   :-1.0000   
-##  1st Qu.:-0.9873     1st Qu.:-0.9920    1st Qu.:-0.9865   
-##  Median :-0.9475     Median :-0.9562    Median :-0.9280   
-##  Mean   :-0.7436     Mean   :-0.6550    Mean   :-0.6122   
-##  3rd Qu.:-0.5133     3rd Qu.:-0.3203    3rd Qu.:-0.2361   
-##  Max.   : 1.0000     Max.   : 1.0000    Max.   : 1.0000   
-##  fBodyAccJerk_std_Z fBodyAccJerk_meanFreq_X fBodyAccJerk_meanFreq_Y
-##  Min.   :-1.0000    Min.   :-1.00000        Min.   :-1.000000      
-##  1st Qu.:-0.9895    1st Qu.:-0.29770        1st Qu.:-0.427951      
-##  Median :-0.9590    Median :-0.04544        Median :-0.236530      
-##  Mean   :-0.7809    Mean   :-0.04771        Mean   :-0.213393      
-##  3rd Qu.:-0.5903    3rd Qu.: 0.20447        3rd Qu.: 0.008651      
-##  Max.   : 1.0000    Max.   : 1.00000        Max.   : 1.000000      
-##  fBodyAccJerk_meanFreq_Z fBodyGyro_mean_X  fBodyGyro_mean_Y 
-##  Min.   :-1.00000        Min.   :-1.0000   Min.   :-1.0000  
-##  1st Qu.:-0.33139        1st Qu.:-0.9853   1st Qu.:-0.9847  
-##  Median :-0.10246        Median :-0.8917   Median :-0.9197  
-##  Mean   :-0.12383        Mean   :-0.6721   Mean   :-0.7062  
-##  3rd Qu.: 0.09124        3rd Qu.:-0.3837   3rd Qu.:-0.4735  
-##  Max.   : 1.00000        Max.   : 1.0000   Max.   : 1.0000  
-##  fBodyGyro_mean_Z  fBodyGyro_std_X   fBodyGyro_std_Y   fBodyGyro_std_Z  
-##  Min.   :-1.0000   Min.   :-1.0000   Min.   :-1.0000   Min.   :-1.0000  
-##  1st Qu.:-0.9851   1st Qu.:-0.9881   1st Qu.:-0.9808   1st Qu.:-0.9862  
-##  Median :-0.8877   Median :-0.9053   Median :-0.9061   Median :-0.8915  
-##  Mean   :-0.6442   Mean   :-0.7386   Mean   :-0.6742   Mean   :-0.6904  
-##  3rd Qu.:-0.3225   3rd Qu.:-0.5225   3rd Qu.:-0.4385   3rd Qu.:-0.4168  
-##  Max.   : 1.0000   Max.   : 1.0000   Max.   : 1.0000   Max.   : 1.0000  
-##  fBodyGyro_meanFreq_X fBodyGyro_meanFreq_Y fBodyGyro_meanFreq_Z
-##  Min.   :-1.00000     Min.   :-1.00000     Min.   :-1.00000    
-##  1st Qu.:-0.27189     1st Qu.:-0.36257     1st Qu.:-0.23240    
-##  Median :-0.09868     Median :-0.17298     Median :-0.05369    
-##  Mean   :-0.10104     Mean   :-0.17428     Mean   :-0.05139    
-##  3rd Qu.: 0.06810     3rd Qu.: 0.01366     3rd Qu.: 0.12251    
-##  Max.   : 1.00000     Max.   : 1.00000     Max.   : 1.00000    
-##  fBodyAccMag_mean  fBodyAccMag_std   fBodyAccMag_meanFreq
-##  Min.   :-1.0000   Min.   :-1.0000   Min.   :-1.00000    
-##  1st Qu.:-0.9847   1st Qu.:-0.9829   1st Qu.:-0.09663    
-##  Median :-0.8755   Median :-0.8547   Median : 0.07026    
-##  Mean   :-0.5860   Mean   :-0.6595   Mean   : 0.07688    
-##  3rd Qu.:-0.2173   3rd Qu.:-0.3823   3rd Qu.: 0.24495    
-##  Max.   : 1.0000   Max.   : 1.0000   Max.   : 1.00000    
-##  fBodyBodyAccJerkMag_mean fBodyBodyAccJerkMag_std
-##  Min.   :-1.0000          Min.   :-1.0000        
-##  1st Qu.:-0.9898          1st Qu.:-0.9907        
-##  Median :-0.9290          Median :-0.9255        
-##  Mean   :-0.6208          Mean   :-0.6401        
-##  3rd Qu.:-0.2600          3rd Qu.:-0.3082        
-##  Max.   : 1.0000          Max.   : 1.0000        
-##  fBodyBodyAccJerkMag_meanFreq fBodyBodyGyroMag_mean fBodyBodyGyroMag_std
-##  Min.   :-1.000000            Min.   :-1.0000       Min.   :-1.0000     
-##  1st Qu.:-0.002959            1st Qu.:-0.9825       1st Qu.:-0.9781     
-##  Median : 0.164180            Median :-0.8756       Median :-0.8275     
-##  Mean   : 0.173220            Mean   :-0.6974       Mean   :-0.7000     
-##  3rd Qu.: 0.357307            3rd Qu.:-0.4514       3rd Qu.:-0.4713     
-##  Max.   : 1.000000            Max.   : 1.0000       Max.   : 1.0000     
-##  fBodyBodyGyroMag_meanFreq fBodyBodyGyroJerkMag_mean
-##  Min.   :-1.00000          Min.   :-1.0000          
-##  1st Qu.:-0.23436          1st Qu.:-0.9921          
-##  Median :-0.05210          Median :-0.9453          
-##  Mean   :-0.04156          Mean   :-0.7798          
-##  3rd Qu.: 0.15158          3rd Qu.:-0.6122          
-##  Max.   : 1.00000          Max.   : 1.0000          
-##  fBodyBodyGyroJerkMag_std fBodyBodyGyroJerkMag_meanFreq
-##  Min.   :-1.0000          Min.   :-1.00000             
-##  1st Qu.:-0.9926          1st Qu.:-0.01948             
-##  Median :-0.9382          Median : 0.13625             
-##  Mean   :-0.7922          Mean   : 0.12671             
-##  3rd Qu.:-0.6437          3rd Qu.: 0.28896             
-##  Max.   : 1.0000          Max.   : 1.00000             
-##  angletBodyAccMeangravity angletBodyAccJerkMeangravityMean
-##  Min.   :-1.000000        Min.   :-1.000000               
-##  1st Qu.:-0.124694        1st Qu.:-0.287031               
-##  Median : 0.008146        Median : 0.007668               
-##  Mean   : 0.007705        Mean   : 0.002648               
-##  3rd Qu.: 0.149005        3rd Qu.: 0.291490               
-##  Max.   : 1.000000        Max.   : 1.000000               
-##  angletBodyGyroMeangravityMean angletBodyGyroJerkMeangravityMean
-##  Min.   :-1.00000              Min.   :-1.000000                
-##  1st Qu.:-0.49311              1st Qu.:-0.389041                
-##  Median : 0.01719              Median :-0.007186                
-##  Mean   : 0.01768              Mean   :-0.009219                
-##  3rd Qu.: 0.53614              3rd Qu.: 0.365996                
-##  Max.   : 1.00000              Max.   : 1.000000                
-##  angleXgravityMean angleYgravityMean   angleZgravityMean      Subject     
-##  Min.   :-1.0000   Min.   :-1.000000   Min.   :-1.000000   Min.   : 1.00  
-##  1st Qu.:-0.8173   1st Qu.: 0.002151   1st Qu.:-0.131880   1st Qu.: 9.00  
-##  Median :-0.7156   Median : 0.182029   Median :-0.003882   Median :17.00  
-##  Mean   :-0.4965   Mean   : 0.063255   Mean   :-0.054284   Mean   :16.15  
-##  3rd Qu.:-0.5215   3rd Qu.: 0.250790   3rd Qu.: 0.102970   3rd Qu.:24.00  
-##  Max.   : 1.0000   Max.   : 1.000000   Max.   : 1.000000   Max.   :30.00  
-##     Activity    
-##  Min.   :1.000  
-##  1st Qu.:2.000  
-##  Median :4.000  
-##  Mean   :3.625  
-##  3rd Qu.:5.000  
-##  Max.   :6.000
+names(mergeMeanStd)
+names(mergeMeanStd)
+##  [1] "tBodyAcc_mean_X"                  
+##  [2] "tBodyAcc_mean_Y"                  
+##  [3] "tBodyAcc_mean_Z"                  
+##  [4] "tBodyAcc_std_X"                   
+##  [5] "tBodyAcc_std_Y"                   
+##  [6] "tBodyAcc_std_Z"                   
+##  [7] "tGravityAcc_mean_X"               
+##  [8] "tGravityAcc_mean_Y"               
+##  [9] "tGravityAcc_mean_Z"               
+## [10] "tGravityAcc_std_X"                
+## [11] "tGravityAcc_std_Y"                
+## [12] "tGravityAcc_std_Z"                
+## [13] "tBodyAccJerk_mean_X"              
+## [14] "tBodyAccJerk_mean_Y"              
+## [15] "tBodyAccJerk_mean_Z"              
+## [16] "tBodyAccJerk_std_X"               
+## [17] "tBodyAccJerk_std_Y"               
+## [18] "tBodyAccJerk_std_Z"               
+## [19] "tBodyGyro_mean_X"                 
+## [20] "tBodyGyro_mean_Y"                 
+## [21] "tBodyGyro_mean_Z"                 
+## [22] "tBodyGyro_std_X"                  
+## [23] "tBodyGyro_std_Y"                  
+## [24] "tBodyGyro_std_Z"                  
+## [25] "tBodyGyroJerk_mean_X"             
+## [26] "tBodyGyroJerk_mean_Y"             
+## [27] "tBodyGyroJerk_mean_Z"             
+## [28] "tBodyGyroJerk_std_X"              
+## [29] "tBodyGyroJerk_std_Y"              
+## [30] "tBodyGyroJerk_std_Z"              
+## [31] "tBodyAccMag_mean"                 
+## [32] "tBodyAccMag_std"                  
+## [33] "tGravityAccMag_mean"              
+## [34] "tGravityAccMag_std"               
+## [35] "tBodyAccJerkMag_mean"             
+## [36] "tBodyAccJerkMag_std"              
+## [37] "tBodyGyroMag_mean"                
+## [38] "tBodyGyroMag_std"                 
+## [39] "tBodyGyroJerkMag_mean"            
+## [40] "tBodyGyroJerkMag_std"             
+## [41] "fBodyAcc_mean_X"                  
+## [42] "fBodyAcc_mean_Y"                  
+## [43] "fBodyAcc_mean_Z"                  
+## [44] "fBodyAcc_std_X"                   
+## [45] "fBodyAcc_std_Y"                   
+## [46] "fBodyAcc_std_Z"                   
+## [47] "fBodyAcc_meanFreq_X"              
+## [48] "fBodyAcc_meanFreq_Y"              
+## [49] "fBodyAcc_meanFreq_Z"              
+## [50] "fBodyAccJerk_mean_X"              
+## [51] "fBodyAccJerk_mean_Y"              
+## [52] "fBodyAccJerk_mean_Z"              
+## [53] "fBodyAccJerk_std_X"               
+## [54] "fBodyAccJerk_std_Y"               
+## [55] "fBodyAccJerk_std_Z"               
+## [56] "fBodyAccJerk_meanFreq_X"          
+## [57] "fBodyAccJerk_meanFreq_Y"          
+## [58] "fBodyAccJerk_meanFreq_Z"          
+## [59] "fBodyGyro_mean_X"                 
+## [60] "fBodyGyro_mean_Y"                 
+## [61] "fBodyGyro_mean_Z"                 
+## [62] "fBodyGyro_std_X"                  
+## [63] "fBodyGyro_std_Y"                  
+## [64] "fBodyGyro_std_Z"                  
+## [65] "fBodyGyro_meanFreq_X"             
+## [66] "fBodyGyro_meanFreq_Y"             
+## [67] "fBodyGyro_meanFreq_Z"             
+## [68] "fBodyAccMag_mean"                 
+## [69] "fBodyAccMag_std"                  
+## [70] "fBodyAccMag_meanFreq"             
+## [71] "fBodyBodyAccJerkMag_mean"         
+## [72] "fBodyBodyAccJerkMag_std"          
+## [73] "fBodyBodyAccJerkMag_meanFreq"     
+## [74] "fBodyBodyGyroMag_mean"            
+## [75] "fBodyBodyGyroMag_std"             
+## [76] "fBodyBodyGyroMag_meanFreq"        
+## [77] "fBodyBodyGyroJerkMag_mean"        
+## [78] "fBodyBodyGyroJerkMag_std"         
+## [79] "fBodyBodyGyroJerkMag_meanFreq"    
+## [80] "angletBodyAccMeangravity"         
+## [81] "angletBodyAccJerkMeangravityMean" 
+## [82] "angletBodyGyroMeangravityMean"    
+## [83] "angletBodyGyroJerkMeangravityMean"
+## [84] "angleXgravityMean"                
+## [85] "angleYgravityMean"                
+## [86] "angleZgravityMean"                
+## [87] "Subject"                          
+## [88] "Activity"
 ids<-c(subject, activity)
 tidy_means <- melt(merge,id = ids, colnames(train)) 
 tidy_means<-dcast(tidy_means, Subject + Activity ~ variable, fun.aggregate = mean, na.rm = TRUE)
